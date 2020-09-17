@@ -1,0 +1,46 @@
+.features{
+    grid-column: center-start / center-end;
+    margin: 15rem 0;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 6rem;
+    // For removing the extra gap b/w heading and text
+    align-items: start;
+    
+    // 600px  screen
+    @media only screen and (max-width: $bp-small) {
+        // No need becoz auto fit is there
+        // grid-template-columns: repeat(2, 1fr);
+        margin: 8rem 0;
+    }
+    // 400px  screen
+    @media only screen and (max-width: $bp-tiny) {
+        // No need becoz auto fit is there
+        // grid-template-columns: repeat(1, 1fr);
+        margin: 5rem 0;
+    }
+}
+
+.feature{
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+
+
+    &__icon{
+        fill: $color-primary;
+        width: 4.5rem; // 45px
+        height: 4.5rem; // 45px
+        // -1 only works with explicit grid
+        // grid-row: 1 / -1;
+        // For implicit grid use span
+        grid-row: 1 / span 2;
+        transform: translateY(-1rem);
+    }
+
+    &__text{
+        font-size: 1.7rem;
+    }
+}
